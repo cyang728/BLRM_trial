@@ -12,7 +12,7 @@ interval_prob <- function(jagsdata, Pint){
   # Crucial step to convert all columns to factors, in case some categories are not present at a certain dose level
   out_fct <- lapply(data.frame(total_matrix), factor, levels = interval_levels)
   tt <- data.frame(do.call(cbind, lapply(out_fct, function(x) {prop.table(table(x, useNA = "no"))})))
-  probdt = data.frame(t(tt))
+  probdt <- data.frame(t(tt))
   colnames(probdt) <- c("Punder", "Ptarget", "Pover")
   rownames(probdt) <- NULL
   
