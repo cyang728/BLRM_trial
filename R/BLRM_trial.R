@@ -1,3 +1,5 @@
+library(R2jags)
+
 source("BLRM.bugs")
 
 # Function to calculate the probabilities within different intervals based on MCMC samples
